@@ -9,7 +9,8 @@ use App\Models\Tag;
 class TagController extends Controller
 {
     public function index(){
-        return view('admin.tag.index');
+        $tags = Tag::simplePaginate(5);
+        return view('admin.tag.index', compact('tags'));
     }
 
     public function create(){
@@ -24,5 +25,27 @@ class TagController extends Controller
         else{
             return redirect()->back()->with('error', 'Xəta baş verdi! Taq əlavə olunmadı');
         }
+    }
+
+    public function edit($id){
+        $tag = Tag::findOrFail($id);
+        return view('admin.tag.edit', ['tag' => $tag]);
+    }
+
+    public function update(Request $request, $id){
+        $tag = Tag::find($id);
+        $tag->slug = null;
+        $update = $tag->update($request->all());
+        if($update){
+            return redirect()->back()->with('success', 'Taq uğurla yeniləndi');
+        }else{
+            return redirect()->back()->with('error', 'Xəta baş verdi! Taq yenilənmədi');
+        }
+    }
+
+    public function destroy($id){
+        $tag = Tag::destroy($id);
+        return redirect()->back()->with('success', 'Taq uğurla silindi');
+
     }
 }

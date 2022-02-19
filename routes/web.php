@@ -21,8 +21,11 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'admin', 'as' => 'admin.'], fu
     });
 
     Route::group(['prefix' => 'tag', 'as' => 'tag.'], function(){
-        Route::get('/tags', [TagController::class, 'index'])->name('index');
+        Route::get('/', [TagController::class, 'index'])->name('index');
         Route::get('/create', [TagController::class, 'create'])->name('create');
         Route::post('/create', [TagController::class, 'store'])->name('store');
+        Route::get('/edit/{id}', [TagController::class, 'edit'])->name('edit');
+        Route::post('/update/{id}', [TagController::class, 'update'])->name('update');
+        Route::get('/delete/{id}', [TagController::class, 'destroy'])->name('destroy');
     });
 });
