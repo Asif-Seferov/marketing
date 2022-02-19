@@ -41,12 +41,22 @@
                   <p>Bölmə əlavə et</p>
                 </a>
               </li>
+            </ul>
+
+            <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="../../index3.html" class="nav-link">
+                <a href=" {{route('admin.tag.index')}} " class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Dashboard v3</p>
+                  <p>Taqların siyahısı</p>
                 </a>
               </li>
+              <li class="nav-item">
+                <a href=" {{route('admin.tag.create')}} " class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Tag əlavə et</p>
+                </a>
+              </li>
+              
             </ul>
           </li>
           
