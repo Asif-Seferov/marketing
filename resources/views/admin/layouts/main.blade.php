@@ -15,6 +15,8 @@
   <link rel="stylesheet" href=" {{asset('assets/admin/css/adminlte.min.css')}} ">
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"/>
+
+  @yield('css')
 </head>
 <body class="hold-transition sidebar-mini pace-primary">
 <!-- Site wrapper -->
@@ -55,5 +57,11 @@
 <script src=" {{asset('assets/admin/js/adminlte.min.js')}} "></script>
 <!-- AdminLTE for demo purposes -->
 <!--<script src="../../dist/js/demo.js"></script>-->
+@yield('js')
+<script>
+  $(document).ready(function() {
+    $('.select2').select2();
+  });
+</script>
 </body>
 </html>

@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\MainController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\Admin\TagController;
+use App\Http\Controllers\Admin\PostController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -27,5 +28,14 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'admin', 'as' => 'admin.'], fu
         Route::get('/edit/{id}', [TagController::class, 'edit'])->name('edit');
         Route::post('/update/{id}', [TagController::class, 'update'])->name('update');
         Route::get('/delete/{id}', [TagController::class, 'destroy'])->name('destroy');
+    });
+
+    Route::group(['prefix' => 'post', 'as' => 'post.'], function(){
+        Route::get('/', [PostController::class, 'index'])->name('index');
+        Route::get('/create', [PostController::class, 'create'])->name('create');
+        Route::post('/create', [PostController::class, 'store'])->name('store');
+        Route::get('/edit/{id}', [PostController::class, 'edit'])->name('edit');
+        Route::post('/update/{id}', [PostController::class, 'update'])->name('update');
+        Route::get('/delete/{id}', [PostController::class, 'destroy'])->name('destroy');
     });
 });

@@ -59,6 +59,30 @@
               
             </ul>
           </li>
+
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+            <i class="fa-solid fa-rectangle-list ml-2"></i>
+              <p class="ml-2">
+                Post
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href=" {{route('admin.post.index')}} " class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Postların siyahısı</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href=" {{route('admin.post.create')}} " class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Post əlavə et</p>
+                </a>
+              </li>
+            </ul>
+          </li>
           
         </ul>
       </nav>

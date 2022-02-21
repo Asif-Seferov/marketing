@@ -8,7 +8,7 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>Pace</h1>
+            <h1>Taqların siyahısı</h1>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
@@ -23,9 +23,6 @@
         <div class="alert alert-success"> {{ session('success') }} </div>
     @endif
     <div class="card">
-        <div class="card-header">
-            <h1>Taglarin siyahisi</h1>
-        </div>
         <div class="card-body">
             <table class="table table-bordered table-hover">
             <thead>
