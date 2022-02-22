@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Tag;
+use App\Http\Requests\TagRequest;
 
 class TagController extends Controller
 {
@@ -17,7 +18,7 @@ class TagController extends Controller
         return view('admin.tag.create');
     }
 
-    public function store(Request $request){
+    public function store(TagRequest $request){
         $tag = Tag::create($request->all());
         if($tag){
             return redirect()->back()->with('success', 'Taq uğurla əlavə olundu');

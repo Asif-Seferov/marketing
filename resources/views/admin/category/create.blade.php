@@ -18,7 +18,10 @@
                     @csrf
                     <div class="mb-3">
                         <label for="name" class="form-label">Bölmə adı</label>
-                        <input type="text" name="name" class="form-control" id="name" aria-describedby="emailHelp">
+                        <input type="text" name="name" class="form-control @error('name') is-invalid @enderror" id="name" aria-describedby="emailHelp">
+                        @error('name')
+                            <div class="text-danger"> {{ $message }} </div>
+                        @enderror
                     </div>
                     <button type="submit" class="btn btn-outline-success">Əlavə et</button>
                 </form>

@@ -8,6 +8,7 @@ use App\Models\Category;
 use App\Models\Tag;
 use App\Models\Post;
 use Illuminate\Support\Facades\Storage;
+use App\Http\Requests\PostRequest;
 
 
 class PostController extends Controller
@@ -23,7 +24,7 @@ class PostController extends Controller
         return view('admin.post.create', compact('categories', 'tags'));
     }
 
-    public function store(Request $request){
+    public function store(PostRequest $request){
         $all = $request->all();
         if(isset($all['tags'])){
             unset($all['tags']);

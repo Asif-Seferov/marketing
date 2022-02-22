@@ -26,8 +26,11 @@
             @csrf
             <div class="mb-3">
                 <label for="tag" class="form-label">Taq adı</label>
-                <input type="text" name="name" class="form-control" id="tag" aria-describedby="emailHelp">
-            </div>
+                <input type="text" name="name" class="form-control @error('name') is-invalid @enderror" id="tag" aria-describedby="emailHelp">
+                @error('name')
+                    <div class="text-danger"> {{ $message }} </div>
+                @enderror
+              </div>
             <button type="submit" class="btn btn-outline-success">Əlavə et</button>
         </form>
         </div>

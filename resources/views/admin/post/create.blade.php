@@ -28,11 +28,17 @@
             @csrf
         <div class="mb-3">
             <label for="name" class="form-label">Post adı</label>
-            <input type="text" autofocus name="name" class="form-control" id="name" aria-describedby="emailHelp">
+            <input type="text" autofocus name="name" class="form-control @error('name') is-invalid @enderror" id="name" aria-describedby="emailHelp">
+            @error('name')
+                <div class="text-danger"> {{ $message }} </div>
+            @enderror
         </div>
         <div class="mb-3">
             <label for="desc" class="form-label">Qısa açıqlama</label>
-            <input type="text" name="desc" class="form-control" id="desc" aria-describedby="emailHelp">
+            <input type="text" name="desc" class="form-control @error('desc') is-invalid @enderror" id="desc" aria-describedby="emailHelp">
+            @error('name')
+                <div class="text-danger"> {{ $message }} </div>
+            @enderror
         </div>
         <div class="mb-3">
             <label for="content" class="form-label">Tam mətn</label>
@@ -40,11 +46,14 @@
         </div>
         <div class="mb-3">
             <label for="categoryId" class="form-label">Bölmə</label>
-            <select name="category_id" id="categoryId" class="custom-select">
+            <select name="category_id" id="categoryId" class="custom-select @error('category_id') is-invalid @enderror">
                 @foreach($categories as $key => $value)
                 <option value=" {{ $key }} "> {{ $value }} </option>
                 @endforeach
             </select>
+            @error('category_id')
+                <div class="text-danger"> {{ $message }} </div>
+            @enderror
         </div>
         <div class="mb-3">
             <label for="tagId" class="form-label">Taq</label>
