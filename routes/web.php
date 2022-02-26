@@ -6,10 +6,10 @@ use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\Admin\TagController;
 use App\Http\Controllers\Admin\PostController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\MarketingController;
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
+Route::get('/', [MarketingController::class, 'index'])->name('index');
     Route::get('/login', [LoginController::class, 'login'])->name('login');
     Route::post('/login-check', [LoginController::class, 'login_check'])->name('login.check');
 Route::group(['namespace' => 'Admin',  'prefix' => 'admin', 'middleware' => 'auth', 'as' => 'admin.'], function(){
