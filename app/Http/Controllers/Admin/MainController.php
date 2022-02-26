@@ -13,9 +13,6 @@ use App\Models\Category;
 class MainController extends Controller
 {
     public function index(){
-        Category::create([
-            'name' => 'Salam Dünya'
-        ]);
         return view('admin.index');
     }
 }
