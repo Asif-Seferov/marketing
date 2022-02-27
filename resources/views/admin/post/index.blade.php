@@ -39,7 +39,7 @@
                     <tbody>
                         @foreach($posts as $post)
                             <tr>
-                            <td><img class="img-thumbnail" width="100" height="100" src="{{ $post->getImage($post->img) }}" alt="post image"></td>
+                            <td style="width: 200px; height: 200px;"><img class="img-thumbnail" style="width: 100%; height: 100%; object-fit: cover;"  src="{{ $post->getImage($post->img) }}" alt="post image"></td>
                             <td> {{ $post->name }} </td>
                             <td> {{ $post->getCatName($post->category_id) }} </td>
                             <td> {{ $post->tags->pluck('name')->join(',') }} </td>

@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     
     <!-- Site Metas -->
-    <title>Markedia - Marketing Blog Template</title>
+    <title>@yield('title')</title>
     <meta name="keywords" content="">
     <meta name="description" content="">
     <meta name="author" content="">
@@ -55,7 +55,7 @@
         @include('layouts.header')
 
         @if(route('index'))
-            <section id="cta" class="section">
+            <section id="cta" class="section" style="background-image: url('../../assets/front/images/tech2.jpg'); height: 100vh;">
                 <div class="container">
                     <div class="row">
                         <div class="col-lg-8 col-md-12 align-self-center">
