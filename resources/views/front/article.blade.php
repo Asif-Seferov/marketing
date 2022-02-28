@@ -28,7 +28,7 @@
                                         </div><!-- end post-sharing -->
                                         <h4><a href="{{route('post.show', ['slug' => $post->slug])}}" title=""> {{ $post->name }} </a></h4>
                                         <p> {{ $post->desc }} </p>
-                                        
+                                        <small><a href=" {{ route('category.show', ['slug' => $post->category->slug]) }} "> {{ $post->category->name }} </a></small>
                                         <small> {{ $post->getDate() }} </small>
                                         <small><i class="fa fa-eye"></i> {{ $post->views }} </small>
                                     </div><!-- end meta -->

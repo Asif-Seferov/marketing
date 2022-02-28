@@ -11,9 +11,12 @@ use App\Http\Controllers\MarketingController;
 
 Route::get('/', [MarketingController::class, 'index'])->name('index');
 Route::get('/post/{slug}', [MarketingController::class, 'post_show'])->name('post.show');
-//Route::get('/category/{slug}', [MarketingController::class, 'category_show'])->name('category.show');
+Route::get('/category/{slug}', [MarketingController::class, 'category_show'])->name('category.show');
+Route::get('/tags/{slug}', [MarketingController::class, 'tags_show'])->name('tags.show');
+
     Route::get('/login', [LoginController::class, 'login'])->name('login');
     Route::post('/login-check', [LoginController::class, 'login_check'])->name('login.check');
+    
 Route::group(['namespace' => 'Admin',  'prefix' => 'admin', 'middleware' => 'auth', 'as' => 'admin.'], function(){
     
         Route::get('/', [MainController::class, 'index'])->name('index');
